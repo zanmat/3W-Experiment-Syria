@@ -8,8 +8,8 @@ var config = {
     whatFieldName:"activity",
     whereFieldName:"adm_code",
     statusFieldName:"status",
-    geo:"data/micronesia.json",
-    joinAttribute:"MID",
+    geo:"data/syria_adm2.geojson",
+    joinAttribute:"PCODE",
     colors:['#81d4fa','#4fc3f7','#29b6f6','#03a9f4','#039be5','#0288d1','#0277bd','#01579b']
 };
 
@@ -40,7 +40,7 @@ function generate3WComponent(config,data,geom){
     var statusGroup = statusDimension.group();
     var all = cf.groupAll();
 
-    whoChart.width($('#hdx-3W-who').width()).height(400)
+    whoChart.width($('#hdx-3W-who').width()).height(500)
             .dimension(whoDimension)
             .group(whoGroup)
             .elasticX(true)
@@ -53,7 +53,7 @@ function generate3WComponent(config,data,geom){
             .colorAccessor(function(d, i){return 3;})
             .xAxis().ticks(5);
 
-    whatChart.width($('#hdx-3W-what').width()).height(200)
+    whatChart.width($('#hdx-3W-what').width()).height(300)
             .dimension(whatDimension)
             .group(whatGroup)
             .elasticX(true)
@@ -66,7 +66,7 @@ function generate3WComponent(config,data,geom){
             .colorAccessor(function(d, i){return 3;})
             .xAxis().ticks(5);
 
-    statusChart.width($('#hdx-3W-status').width()).height(150)
+    statusChart.width($('#hdx-3W-status').width()).height(160)
             .dimension(statusDimension)
             .group(statusGroup)
             .elasticX(true)
@@ -99,7 +99,7 @@ function generate3WComponent(config,data,geom){
                 }
             })
             .featureKeyAccessor(function(feature){
-                return Math.floor(feature.properties[(config.joinAttribute)]);
+                return feature.properties[(config.joinAttribute)];
             });
 
         dc.dataTable("#data-table")
@@ -140,7 +140,7 @@ function generate3WComponent(config,data,geom){
         .attr('class', 'x-axis-label')
         .attr('text-anchor', 'middle')
         .attr('x', $('#hdx-3W-who').width()/2)
-        .attr('y', 200)
+        .attr('y', 500)
         .text('Activities');
 
     var g = d3.selectAll('#hdx-3W-what').select('svg').append('g');
@@ -149,7 +149,7 @@ function generate3WComponent(config,data,geom){
         .attr('class', 'x-axis-label')
         .attr('text-anchor', 'middle')
         .attr('x', $('#hdx-3W-what').width()/2)
-        .attr('y', 200)
+        .attr('y', 300)
         .text('Activities');
 
     var g = d3.selectAll('#hdx-3W-status').select('svg').append('g');
@@ -158,7 +158,7 @@ function generate3WComponent(config,data,geom){
         .attr('class', 'x-axis-label')
         .attr('text-anchor', 'middle')
         .attr('x', $('#hdx-3W-status').width()/2)
-        .attr('y', 150)
+        .attr('y', 160)
         .text('Activities');
 
 }
@@ -182,7 +182,7 @@ var geomCall = $.ajax({
 //when both ready construct 3W
 
 $.when(dataCall, geomCall).then(function(dataArgs, geomArgs){
-    var geom = topojson.feature(geomArgs[0],geomArgs[0].objects.micronesia);
+    var geom = geomArgs[0];
     geom.features.forEach(function(e){
         e.properties[config.joinAttribute] = String(e.properties[config.joinAttribute]);
     });
