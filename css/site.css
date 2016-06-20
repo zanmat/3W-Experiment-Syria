@@ -1,0 +1,82 @@
+.dc-chart g.row text {
+    fill: black;
+    font-size:0.8em;
+}
+
+.dc-chart .pie-slice {
+    fill:black;
+}
+
+.x-axis-label{
+    font-size:0.8em;
+}
+
+.dc-chart g.selected path {
+    stroke-width:1px !important;
+}
+
+#hdx-3W-where {
+    height:470px;
+    width:100%;
+}
+
+.hdx-3w-viz{
+    width:100%;
+}
+
+#header{
+    padding-bottom:20px;
+    border-bottom-color: #dddddd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-bottom:20px;
+}
+
+.container{
+    padding-bottom:20px;
+    min-width:500px;
+}
+
+#reset{
+    background-color:#03a9f4;
+    border-color:#03a9f4;
+}
+
+.colheight{
+    height:235px;
+}
+
+.colheight2{
+    height:220px;
+}
+
+#data-table{
+    width:95%;
+    margin-left:2.5%;
+    margin-top:20px;
+        
+}
+
+.table_head {
+    width:16%;
+    display:inline-block;
+}
+
+.dc-table-group{
+    width:100%;
+}
+
+tbody{
+    width:100%;
+    display:table;
+}
+
+.dc-table-row {
+    width:100%;
+}
+
+.dc-table-column{
+    width:16%;
+    padding:0px;
+    margin:0px;
+}
