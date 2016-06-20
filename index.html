@@ -24,39 +24,40 @@
                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
-        </script>         
+        </script>
     </head>
     <body>
         <div class="container">
                 <div id="header" class="row">
                     <h2 id="title"></h2>
-                    <div class="col-md-8">  
-                        <p>Who is doing what and where in the Typhoon Maysak response.</p>
+                    <div class="col-md-8">
+                        <p>Who is doing what and where in the Syria Crisis response.</p>
+                        <p>Click the graphs or map to interact.<br />Last Updated: 20 June, 2016 - Contact: <a href='mailto:rydelafosse@redcross.org.uk' target='_blank'>Ryan Delafosse</a></p>
                     </div>
                     <div class="col-md-1">
                         <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All</a>
-                    </div>                            
+                    </div>
                     <div id="count-info" class="col-md-3">
                         <span class="filter-count "></span> selected out of <span class="total-count "></span> records.
-                    </div>                   
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 colheight"><p id="description"></p>
                         <div class="hdx-3w-viz" id="hdx-3W-status">
                             <p>Status</p>
-                        </div>  
+                        </div>
                     </div>
-                    <div class="col-md-4 colheight">                        
+                    <div class="col-md-4 colheight">
                         <div class="hdx-3w-viz" id="hdx-3W-what">
                             <p>What</p>
-                        </div>                 
+                        </div>
                     </div>
                     <div class="col-md-4 colheight"><div id="hdx-3W-who" class="hdx-3w-viz"><p>Who (Top 20)</p></div></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 colheightbottom"><p id="wheretitle">Where</p><div  class="hdx-3w-viz" id="hdx-3W-where"></div></div> 
-                </div>  
-            <div class="row">                
+                    <div class="col-md-12 colheightbottom"><p id="wheretitle">Where</p><div  class="hdx-3w-viz" id="hdx-3W-where"></div></div>
+                </div>
+            <div class="row">
                 <div class="table table-hover" id="data-table">
                     <p>Data table</p>
                     <div class="header">
@@ -68,8 +69,8 @@
                         <div class="table_head">Quantity</div>
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
-        <script src="js/site.js"></script> 
+        <script src="js/site.js"></script>
     </body>
 </html>
